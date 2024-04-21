@@ -8,10 +8,22 @@ spring:
   cache:
     type: redis
     redis:
+      time-to-live: 100000ms
       cache-null-values: true
-      time-to-live: 10ms
+    cache-names: employees
+
   data:
     redis:
       port: 6379
       host: 127.0.0.1
+  h2:
+    console:
+      enabled: true
+
+
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: sa
+
 
